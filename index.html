@@ -11,15 +11,15 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #000000;
         }
         .box {
             font-size: 20px;
             color: white;
-            height: 250px;
-            width: 350px;
+            height: 350px;
+            width: 500px;
             border-radius: 10px;
-            background: #191919;
+            background: #000000;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -27,14 +27,15 @@
         }
         .buttons-container {
             display: flex;
-            justify-content: space-around;
-            width: 150px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
             margin-top: 20px;
         }
-        .button, #no {
+        .button, .move {
             height: 30px;
-            width: 60px;
-            background: white;
+            width: 90px;
+            background: rgb(255, 255, 255);
             border-radius: 5px;
             color: blue;
             font-weight: 600;
@@ -54,23 +55,28 @@
 </head>
 <body>
     <div class="box">
-        <p>Lolzinho hj antes do enem ??</p>
+        <p>Lolzinho hj antes do enem </p>
         <div class="buttons-container">
             <button class="button">
                 <a href="https://x.com/whygou" target="_blank">Sim</a>
             </button>
-            <button id="no" class="button">Não</button>
+            <button id="no" class="move">Não</button>
+            <button id="depois" class="move">Depois</button>
+            <button id="fuso" class="move">preguiça</button>
+            <button id="estudar" class="move">Tenho que estudar</button>
         </div>
     </div>
     <script>
-        let button = document.getElementById('no');
+        let buttons = document.querySelectorAll('.move');
         let height = window.innerHeight - 50;
         let width = window.innerWidth - 50;
 
-        button.addEventListener('mouseover', function () {
-            button.style.position = "absolute";
-            button.style.top = Math.random() * height + "px";
-            button.style.left = Math.random() * width + "px";
+        buttons.forEach(button => {
+            button.addEventListener('mouseover', function () {
+                button.style.position = "absolute";
+                button.style.top = Math.random() * height + "px";
+                button.style.left = Math.random() * width + "px";
+            });
         });
     </script>
 </body>
