@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .box {
+            font-size: 20px;
+            color: white;
+            height: 250px;
+            width: 350px;
+            border-radius: 10px;
+            background: #191919;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: space-around;
+            width: 150px;
+            margin-top: 20px;
+        }
+        .button, #no {
+            height: 30px;
+            width: 60px;
+            background: white;
+            border-radius: 5px;
+            color: blue;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>Lolzinho hj antes do enem ??</p>
+        <div class="buttons-container">
+            <button class="button">
+                <a href="https://x.com/whygou" target="_blank">Sim</a>
+            </button>
+            <button id="no" class="button">Não</button>
+        </div>
+    </div>
+    <script>
+        let button = document.getElementById('no');
+        let height = window.innerHeight - 50;
+        let width = window.innerWidth - 50;
+
+        button.addEventListener('mouseover', function () {
+            button.style.position = "absolute";
+            button.style.top = Math.random() * height + "px";
+            button.style.left = Math.random() * width + "px";
+        });
+    </script>
+</body>
+</html>
